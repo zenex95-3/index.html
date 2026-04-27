@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anjum's Hyderabadi Khichada — Homemade & Authentic</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Lora:ital,wght@0,400;0,600;1,400&family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yellow:#FFD000;--ypale:#FFFBE8;--ylight:#FFF3A3;
+  --orange:#FF6B00;--olight:#FF9A3C;--odeep:#E85000;
+  --cream:#FFF8EC;--brown:#5C2D00;--green:#1A6B30;--white:#fff;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Lora',serif;background:var(--cream);color:var(--brown);overflow-x:hidden;}
+
+/* ══ ANNOUNCEMENT BAR ══ */
+.ann-bar{background:linear-gradient(90deg,var(--odeep),var(--orange),var(--yellow),var(--orange),var(--odeep));
+  background-size:300% 100%;animation:annShift 6s linear infinite;
+  text-align:center;padding:9px 16px;font-family:'Baloo 2',cursive;
+  font-size:.78rem;font-weight:800;color:white;letter-spacing:.08em;
+  text-transform:uppercase;position:relative;z-index:400;}
+@keyframes annShift{0%{background-position:0%}100%{background-position:300%}}
+
+/* ══ NAV ══ */
+nav{position:sticky;top:0;left:0;right:0;z-index:300;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(14px);
+  border-bottom:3px solid var(--yellow);padding:0 6%;
+  display:flex;align-items:center;justify-content:space-between;
+  height:66px;box-shadow:0 2px 20px rgba(255,107,0,.1);}
+.nl{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.ni{width:44px;height:44px;background:linear-gradient(135deg,var(--orange),var(--yellow));
+  border-radius:12px;display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;box-shadow:0 4px 12px rgba(255,107,0,.3);}
+.nt{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:900;color:var(--brown);line-height:1.1;}
+.ns{font-family:'Lora',serif;font-size:.62rem;color:var(--orange);font-style:italic;}
+.nlinks{display:flex;gap:22px;list-style:none;}
+.nlinks a{text-decoration:none;font-family:'Baloo 2',cursive;font-size:.82rem;font-weight:700;
+  color:var(--brown);text-transform:uppercase;letter-spacing:.07em;transition:color .2s;position:relative;}
+.nlinks a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:2px;
+  background:var(--orange);transform:scaleX(0);transition:transform .2s;}
+.nlinks a:hover{color:var(--orange);}
+.nlinks a:hover::after{transform:scaleX(1);}
+.ncta{background:linear-gradient(135deg,var(--orange),var(--yellow))!important;
+  color:white!important;padding:8px 18px;border-radius:8px;
+  box-shadow:0 4px 14px rgba(255,107,0,.35);transition:transform .15s!important;}
+.ncta:hover{transform:translateY(-2px)!important;}
+.ncta::after{display:none!important;}
+/* Hamburger */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:24px;height:2.5px;background:var(--brown);border-radius:4px;transition:all .3s;}
+.mob-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;
+  background:rgba(255,255,255,.98);z-index:500;flex-direction:column;
+  align-items:center;justify-content:center;gap:28px;}
+.mob-menu.open{display:flex;}
+.mob-menu a{font-family:'Baloo 2',cursive;font-size:1.3rem;font-weight:800;
+  color:var(--brown);text-decoration:none;text-transform:uppercase;letter-spacing:.08em;}
+.mob-menu a:hover{color:var(--orange);}
+.mob-close{position:absolute;top:20px;right:24px;font-size:2rem;cursor:pointer;color:var(--brown);}
+
+/* ══ BUTTONS ══ */
+.btn{display:inline-block;text-decoration:none;font-family:'Baloo 2',cursive;
+  font-weight:800;font-size:.95rem;text-transform:uppercase;letter-spacing:.07em;
+  padding:14px 30px;border-radius:12px;border:none;cursor:pointer;
+  transition:transform .15s,box-shadow .15s;}
+.bp{background:linear-gradient(135deg,var(--odeep),var(--orange),var(--yellow));
+  color:white;box-shadow:0 8px 24px rgba(255,107,0,.4);}
+.bp:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(255,107,0,.5);}
+.bo{background:white;color:var(--odeep);border:2.5px solid var(--orange);}
+.bo:hover{background:var(--ypale);}
+
+/* ══ HERO ══ */
+.hero{min-height:100vh;
+  background:linear-gradient(150deg,#FFF8EC 0%,#FFE8A0 55%,#FFBB44 100%);
+  display:flex;align-items:center;justify-content:center;
+  padding:80px 6% 60px;position:relative;overflow:hidden;text-align:center;}
+.hblob{position:absolute;border-radius:50%;opacity:.12;pointer-events:none;}
+.hi{position:relative;z-index:2;max-width:720px;}
+.hbadge{display:inline-flex;align-items:center;gap:8px;background:white;
+  border:2px solid var(--yellow);border-radius:30px;padding:6px 18px;
+  font-family:'Baloo 2',cursive;font-size:.75rem;font-weight:800;color:var(--odeep);
+  text-transform:uppercase;letter-spacing:.1em;margin-bottom:22px;
+  box-shadow:0 4px 14px rgba(255,107,0,.15);animation:fd .7s ease both;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,7vw,4.2rem);
+  font-weight:900;line-height:1.07;color:var(--brown);margin-bottom:10px;animation:fu .7s ease .1s both;}
+.hero h1 span{color:var(--orange);}
+.htag{font-family:'Lora',serif;font-style:italic;font-size:1.1rem;color:#7A4500;
+  margin-bottom:28px;line-height:1.6;animation:fu .7s ease .2s both;}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px;animation:fu .7s ease .3s both;}
+.chip{background:white;border:2px solid var(--olight);border-radius:10px;padding:6px 14px;
+  font-family:'Baloo 2',cursive;font-size:.78rem;font-weight:700;color:var(--odeep);}
+.hbtns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;animation:fu .7s ease .4s both;}
+.spice-float{position:absolute;font-size:1.8rem;opacity:.18;pointer-events:none;animation:spF 7s ease-in-out infinite;}
+@keyframes spF{0%,100%{transform:translateY(0) rotate(0deg);}33%{transform:translateY(-22px) rotate(12deg);}66%{transform:translateY(-10px) rotate(-8deg);}}
+@keyframes fd{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:none;}}
+@keyframes fu{from{opacity:0;transform:translateY(24px);}to{opacity:1;transform:none;}}
+
+/* ══ TICKER ══ */
+.ticker-wrap{background:linear-gradient(135deg,var(--orange),var(--yellow));padding:13px 0;overflow:hidden;white-space:nowrap;}
+.ticker-track{display:inline-block;animation:tick 18s linear infinite;}
+.ticker-track span{font-family:'Baloo 2',cursive;font-size:.82rem;font-weight:800;color:white;text-transform:uppercase;letter-spacing:.12em;margin:0 28px;}
+@keyframes tick{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ══ SECTIONS ══ */
+section{padding:80px 6%;}
+.sc{text-align:center;}
+.slbl{font-family:'Baloo 2',cursive;font-size:.72rem;font-weight:800;color:var(--orange);
+  text-transform:uppercase;letter-spacing:.18em;margin-bottom:8px;
+  display:flex;align-items:center;justify-content:center;gap:12px;}
+.slbl::before,.slbl::after{content:'';width:50px;height:2px;background:linear-gradient(90deg,transparent,var(--yellow));}
+.slbl::after{background:linear-gradient(90deg,var(--yellow),transparent);}
+.stitle{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.7rem);font-weight:900;color:var(--brown);margin-bottom:14px;}
+
+/* ══ PRODUCT ══ */
+#product{background:white;}
+.playout{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;max-width:1080px;margin:48px auto 0;}
+.pcard{background:linear-gradient(145deg,var(--ypale),#FFE8B0);border-radius:28px;padding:44px 30px;
+  border:3px solid var(--yellow);box-shadow:0 20px 60px rgba(255,107,0,.18);text-align:center;position:relative;overflow:hidden;}
+.pcard::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;background:var(--orange);border-radius:50%;opacity:.07;}
+.pemoji{font-size:7rem;display:block;margin-bottom:16px;filter:drop-shadow(0 8px 20px rgba(255,107,0,.3));animation:wobble 3s ease-in-out infinite;}
+@keyframes wobble{0%,100%{transform:rotate(-3deg) scale(1);}50%{transform:rotate(3deg) scale(1.06);}}
+.pname{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--brown);margin-bottom:4px;}
+.pby{font-family:'Lora',serif;font-style:italic;font-size:.88rem;color:var(--orange);}
+.pbubble{position:absolute;top:-18px;right:-18px;
+  background:linear-gradient(135deg,var(--odeep),var(--orange));color:white;border-radius:50%;
+  width:78px;height:78px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  box-shadow:0 8px 20px rgba(255,107,0,.4);font-family:'Playfair Display',serif;
+  animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{box-shadow:0 8px 20px rgba(255,107,0,.4),0 0 0 0 rgba(255,107,0,.3);}50%{box-shadow:0 8px 20px rgba(255,107,0,.4),0 0 0 10px rgba(255,107,0,0);}}
+.pbubble .pa{font-size:1.3rem;font-weight:900;line-height:1;}
+.pbubble .pl{font-size:.46rem;font-family:'Baloo 2',cursive;opacity:.85;}
+.pbar{background:linear-gradient(135deg,var(--orange),var(--yellow));border-radius:18px;
+  padding:20px 24px;display:flex;align-items:center;gap:18px;margin-bottom:22px;
+  box-shadow:0 10px 28px rgba(255,107,0,.28);}
+.pbig{font-family:'Playfair Display',serif;font-size:3rem;font-weight:900;color:white;line-height:1;}
+.pmeta div{font-family:'Baloo 2',cursive;font-size:.86rem;font-weight:700;color:white;opacity:.92;margin-bottom:3px;}
+.inside{background:var(--ypale);border:2px solid var(--yellow);border-radius:18px;padding:20px 22px;margin-bottom:20px;}
+.inside h3{font-family:'Baloo 2',cursive;font-size:.92rem;font-weight:800;color:var(--odeep);text-transform:uppercase;letter-spacing:.07em;margin-bottom:12px;}
+.pack{display:flex;align-items:center;gap:14px;padding:10px 0;border-bottom:1px dashed #FFD88A;}
+.pack:last-child{border-bottom:none;}
+.pico{width:42px;height:42px;background:var(--orange);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;box-shadow:0 4px 10px rgba(255,107,0,.28);}
+.ptxt strong{display:block;font-size:.93rem;color:var(--brown);margin-bottom:2px;}
+.ptxt span{font-size:.78rem;color:#8A5500;font-style:italic;}
+.pdesc{font-size:.9rem;color:#6A3800;line-height:1.8;margin-bottom:22px;}
+
+/* ══ HOW TO COOK ══ */
+#howto{background:linear-gradient(160deg,var(--ypale),var(--cream));}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;max-width:960px;margin:44px auto 0;}
+.step{background:white;border-radius:20px;padding:28px 20px;text-align:center;
+  border:2px solid transparent;box-shadow:0 6px 24px rgba(255,107,0,.09);
+  transition:border-color .25s,transform .25s;position:relative;}
+.step:hover{border-color:var(--yellow);transform:translateY(-5px);}
+.step-num{position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--orange),var(--yellow));color:white;
+  font-family:'Playfair Display',serif;font-size:1rem;font-weight:900;
+  width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 12px rgba(255,107,0,.3);}
+.step-ico{font-size:2.4rem;margin:8px 0 12px;display:block;}
+.step h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--brown);margin-bottom:7px;}
+.step p{font-size:.82rem;color:#8A5500;line-height:1.6;}
+
+/* ══ FEATURES ══ */
+#features{background:white;}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;max-width:940px;margin:42px auto 0;}
+.fcard{background:var(--ypale);border-radius:20px;padding:28px 20px;text-align:center;
+  border:2px solid transparent;box-shadow:0 4px 18px rgba(255,107,0,.07);transition:all .25s;}
+.fcard:hover{border-color:var(--yellow);transform:translateY(-5px);background:white;}
+.fico{font-size:2.5rem;margin-bottom:12px;display:block;transition:transform .3s;}
+.fcard:hover .fico{transform:scale(1.2) rotate(10deg);}
+.fcard h3{font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;color:var(--brown);margin-bottom:7px;}
+.fcard p{font-size:.82rem;color:#8A5500;line-height:1.6;}
+
+/* ══ STATS ══ */
+.stats-strip{background:linear-gradient(135deg,var(--orange),var(--yellow));padding:50px 6%;}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:28px;max-width:860px;margin:0 auto;text-align:center;}
+.stat-num{font-family:'Playfair Display',serif;font-size:2.8rem;font-weight:900;color:white;line-height:1;margin-bottom:6px;}
+.stat-lbl{font-family:'Baloo 2',cursive;font-size:.78rem;font-weight:700;color:rgba(255,255,255,.85);text-transform:uppercase;letter-spacing:.08em;}
+
+/* ══ MARQUEE ══ */
+.spice-marquee{padding:44px 0;background:var(--ypale);overflow:hidden;position:relative;}
+.spice-marquee::before,.spice-marquee::after{content:'';position:absolute;top:0;bottom:0;width:80px;z-index:2;pointer-events:none;}
+.spice-marquee::before{left:0;background:linear-gradient(90deg,var(--ypale),transparent);}
+.spice-marquee::after{right:0;background:linear-gradient(-90deg,var(--ypale),transparent);}
+.mrow{display:flex;gap:0;width:max-content;margin-bottom:14px;}
+.mrow.rev{animation:mq2 22s linear infinite;}
+.mrow:not(.rev){animation:mq1 22s linear infinite;}
+@keyframes mq1{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+@keyframes mq2{from{transform:translateX(-50%);}to{transform:translateX(0);}}
+.mcard{background:white;border:2px solid var(--yellow);border-radius:14px;padding:12px 20px;margin:0 9px;
+  display:flex;align-items:center;gap:9px;font-family:'Baloo 2',cursive;font-size:.82rem;
+  font-weight:700;color:var(--brown);white-space:nowrap;box-shadow:0 4px 14px rgba(255,107,0,.1);}
+.mcard span{font-size:1.2rem;}
+
+/* ══ NUTRITION ══ */
+#nutrition{background:white;}
+.nutr{max-width:660px;margin:42px auto 0;background:var(--ypale);border:3px solid var(--yellow);border-radius:22px;overflow:hidden;}
+.nhead{background:linear-gradient(135deg,var(--orange),var(--yellow));padding:16px 26px;
+  font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:900;color:white;text-align:center;}
+.nbody{padding:20px 26px;}
+.nrow{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:2px solid #FFE088;}
+.nrow:last-child{border-bottom:none;}
+.nlbl{font-family:'Baloo 2',cursive;font-weight:700;font-size:.9rem;color:var(--brown);width:160px;}
+.ntrack{flex:1;height:10px;background:#FFE088;border-radius:10px;overflow:hidden;}
+.nfill{height:100%;border-radius:10px;background:linear-gradient(90deg,var(--orange),var(--yellow));width:0%;transition:width 1.4s cubic-bezier(.4,0,.2,1);}
+.npct{font-family:'Playfair Display',serif;font-size:.92rem;font-weight:700;color:var(--odeep);min-width:80px;text-align:right;}
+
+/* ══ REVIEWS ══ */
+#reviews{background:linear-gradient(160deg,var(--ypale),var(--cream));}
+.reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px;max-width:980px;margin:44px auto 0;}
+.review-card{background:white;border-radius:20px;padding:26px;border:2px solid transparent;
+  box-shadow:0 6px 24px rgba(255,107,0,.09);transition:border-color .2s,transform .2s;}
+.review-card:hover{border-color:var(--yellow);transform:translateY(-4px);}
+.stars{color:var(--yellow);font-size:1.1rem;margin-bottom:10px;letter-spacing:2px;}
+.review-text{font-family:'Lora',serif;font-style:italic;font-size:.9rem;color:#6A3800;line-height:1.7;margin-bottom:14px;}
+.reviewer{display:flex;align-items:center;gap:10px;}
+.reviewer-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--yellow));
+  display:flex;align-items:center;justify-content:center;font-size:1rem;font-weight:700;color:white;font-family:'Baloo 2',cursive;}
+.reviewer-name{font-family:'Baloo 2',cursive;font-size:.82rem;font-weight:800;color:var(--brown);}
+.reviewer-loc{font-size:.72rem;color:#aaa;font-style:italic;}
+
+/* ══ FAQ ══ */
+#faq{background:white;}
+.faq-list{max-width:720px;margin:44px auto 0;display:flex;flex-direction:column;gap:14px;}
+.faq-item{background:var(--ypale);border:2px solid var(--yellow);border-radius:14px;overflow:hidden;}
+.faq-q{padding:18px 22px;font-family:'Baloo 2',cursive;font-size:.95rem;font-weight:800;
+  color:var(--brown);cursor:pointer;display:flex;justify-content:space-between;align-items:center;
+  transition:background .2s;}
+.faq-q:hover{background:#FFE8A0;}
+.faq-arrow{font-size:1.2rem;transition:transform .3s;color:var(--orange);}
+.faq-item.open .faq-arrow{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;}
+.faq-item.open .faq-a{max-height:200px;padding:0 22px 18px;}
+.faq-a p{font-family:'Lora',serif;font-size:.88rem;color:#6A3800;line-height:1.7;}
+
+/* ══ ORDER FORM ══ */
+#order{background:linear-gradient(150deg,var(--orange) 0%,var(--yellow) 100%);position:relative;overflow:hidden;}
+#order::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;background:rgba(255,255,255,.1);border-radius:50%;pointer-events:none;}
+#order::after{content:'';position:absolute;bottom:-60px;left:-60px;width:200px;height:200px;background:rgba(255,255,255,.08);border-radius:50%;pointer-events:none;}
+#order .stitle{color:white;}
+#order .slbl{color:rgba(255,255,255,.85);}
+#order .slbl::before{background:linear-gradient(90deg,transparent,rgba(255,255,255,.3));}
+#order .slbl::after{background:linear-gradient(90deg,rgba(255,255,255,.3),transparent);}
+.osub{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:rgba(255,255,255,.9);margin-bottom:32px;}
+.ocard{max-width:540px;margin:0 auto;background:white;border-radius:26px;padding:36px;box-shadow:0 30px 80px rgba(0,0,0,.18);position:relative;z-index:2;}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.fg{margin-bottom:16px;}
+.fg label{display:block;font-family:'Baloo 2',cursive;font-size:.74rem;font-weight:800;color:var(--odeep);text-transform:uppercase;letter-spacing:.09em;margin-bottom:7px;}
+.fg input,.fg textarea{width:100%;padding:12px 15px;border:2px solid #FFE0A0;border-radius:10px;
+  font-family:'Lora',serif;font-size:.9rem;color:var(--brown);background:var(--ypale);outline:none;
+  transition:border-color .2s,box-shadow .2s,background .2s;}
+.fg input:focus,.fg textarea:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(255,107,0,.12);background:white;}
+.fg textarea{resize:none;height:76px;}
+.qprow{display:flex;gap:12px;align-items:flex-end;margin-bottom:18px;}
+.qprow .fg{flex:1;margin-bottom:0;}
+.totbox{background:linear-gradient(135deg,var(--orange),var(--yellow));border-radius:10px;padding:12px 16px;text-align:center;min-width:112px;}
+.totbox .tl{font-family:'Baloo 2',cursive;font-size:.63rem;font-weight:800;color:white;opacity:.85;text-transform:uppercase;letter-spacing:.08em;}
+.totbox .ta{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:900;color:white;}
+.wabtn{width:100%;padding:16px;background:#25D366;border:none;border-radius:12px;cursor:pointer;
+  font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:white;text-transform:uppercase;
+  letter-spacing:.1em;box-shadow:0 8px 24px rgba(37,211,102,.4);
+  transition:transform .15s,box-shadow .15s;display:flex;align-items:center;justify-content:center;gap:9px;}
+.wabtn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(37,211,102,.5);}
+.onote{text-align:center;margin-top:12px;font-size:.76rem;color:#bbb;font-style:italic;}
+
+/* ══ SUCCESS OVERLAY ══ */
+#sov{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.6);
+  backdrop-filter:blur(8px);align-items:center;justify-content:center;}
+#sov.show{display:flex;}
+.sbox{background:white;border-radius:30px;padding:44px 36px;text-align:center;max-width:340px;
+  width:90%;box-shadow:0 40px 100px rgba(0,0,0,.3);animation:popIn .5s cubic-bezier(.16,1,.3,1) both;position:relative;}
+@keyframes popIn{from{opacity:0;transform:scale(.6);}to{opacity:1;transform:scale(1);}}
+.check-wrap{position:relative;width:90px;height:90px;margin:0 auto 20px;}
+.check-circle{width:90px;height:90px;border-radius:50%;background:linear-gradient(135deg,#25D366,#1aa350);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 32px rgba(37,211,102,.4);animation:circPop .6s .3s cubic-bezier(.16,1,.3,1) both;}
+@keyframes circPop{from{opacity:0;transform:scale(0);}to{opacity:1;transform:scale(1);}}
+.rring{position:absolute;inset:0;border-radius:50%;border:3px solid #25D366;opacity:0;animation:rpl 2s 1s ease-out infinite;}
+@keyframes rpl{0%{opacity:.6;transform:scale(.85);}100%{opacity:0;transform:scale(2);}}
+.cksvg{width:38px;height:38px;}
+.cksvg path{stroke:white;stroke-width:3;fill:none;stroke-dasharray:60;stroke-dashoffset:60;
+  stroke-linecap:round;stroke-linejoin:round;animation:draw .6s .8s ease forwards;}
+@keyframes draw{to{stroke-dashoffset:0;}}
+.sdone{font-family:'Playfair Display',serif;font-size:1.55rem;font-weight:900;color:var(--brown);margin-bottom:5px;animation:fu .5s .9s ease both;}
+.smsg{font-family:'Baloo 2',cursive;font-size:1rem;font-weight:800;color:var(--green);margin-bottom:5px;animation:fu .5s 1s ease both;}
+.ssub{font-family:'Lora',serif;font-size:.8rem;color:#aaa;margin-bottom:20px;font-style:italic;animation:fu .5s 1.1s ease both;}
+.wa-open-btn{width:100%;padding:14px;background:#25D366;border:none;border-radius:11px;cursor:pointer;
+  font-family:'Baloo 2',cursive;font-size:.95rem;font-weight:800;color:white;text-transform:uppercase;
+  letter-spacing:.09em;box-shadow:0 6px 20px rgba(37,211,102,.4);
+  transition:transform .15s;display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:10px;
+  animation:fu .5s 1.2s ease both;}
+.wa-open-btn:hover{transform:translateY(-2px);}
+.sclose{background:none;border:2px solid #eee;border-radius:10px;padding:10px 24px;
+  font-family:'Baloo 2',cursive;font-size:.82rem;font-weight:700;color:#aaa;cursor:pointer;
+  transition:border-color .2s;animation:fu .5s 1.3s ease both;}
+.sclose:hover{border-color:var(--orange);color:var(--orange);}
+.confetti{position:absolute;inset:0;border-radius:30px;pointer-events:none;overflow:hidden;}
+.cdot{position:absolute;border-radius:50%;animation:cfetti 1.2s ease-out forwards;}
+@keyframes cfetti{0%{opacity:1;transform:translateY(0) rotate(0deg);}100%{opacity:0;transform:translateY(-130px) rotate(360deg);}}
+
+/* ══ CONTACT ══ */
+#contact{background:var(--cream);}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:840px;margin:42px auto 0;}
+.ccard{background:white;border-radius:20px;padding:28px;border-top:4px solid var(--orange);box-shadow:0 6px 24px rgba(255,107,0,.1);}
+.ccard h3{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;color:var(--brown);margin-bottom:16px;}
+.ci{display:flex;gap:11px;margin-bottom:13px;}
+.cico{font-size:1.15rem;margin-top:2px;}
+.ctxt{font-size:.88rem;color:#6A3800;line-height:1.65;}
+.clbl{font-family:'Baloo 2',cursive;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);margin-bottom:3px;}
+.walink{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:white;
+  padding:10px 18px;border-radius:28px;font-family:'Baloo 2',cursive;font-size:.82rem;font-weight:700;
+  text-decoration:none;margin-top:8px;box-shadow:0 4px 14px rgba(37,211,102,.3);transition:transform .15s;}
+.walink:hover{transform:translateY(-2px);}
+
+/* ══ FOOTER ══ */
+footer{background:var(--brown);color:rgba(255,255,255,.7);text-align:center;padding:36px 6%;}
+.flogo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:900;color:var(--yellow);margin-bottom:5px;}
+.ftag{font-style:italic;color:rgba(255,210,100,.7);font-size:.82rem;margin-bottom:10px;}
+.flinks{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin-bottom:14px;}
+.flinks a{color:rgba(255,255,255,.55);text-decoration:none;font-family:'Baloo 2',cursive;
+  font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;transition:color .2s;}
+.flinks a:hover{color:var(--yellow);}
+.fcopy{font-size:.72rem;opacity:.4;}
+
+/* ══ BACK TO TOP ══ */
+#btt{position:fixed;bottom:24px;right:24px;z-index:200;
+  width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--yellow));
+  border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:1.2rem;box-shadow:0 6px 20px rgba(255,107,0,.4);
+  opacity:0;transform:translateY(20px);transition:opacity .3s,transform .3s;pointer-events:none;}
+#btt.show{opacity:1;transform:translateY(0);pointer-events:all;}
+#btt:hover{transform:translateY(-3px)!important;}
+
+/* ══ REVEAL ══ */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+.reveal.visible{opacity:1;transform:none;}
+
+/* ══ RESPONSIVE ══ */
+@media(max-width:768px){
+  .playout{grid-template-columns:1fr;}
+  .cgrid{grid-template-columns:1fr;}
+  .frow{grid-template-columns:1fr;}
+  .nlinks{display:none;}
+  .hamburger{display:flex;}
+  .hbtns{flex-direction:column;align-items:center;}
+  .ocard{padding:26px 18px;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  section{padding:60px 5%;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ ANNOUNCEMENT BAR ══ -->
+<div class="ann-bar">🌿 100% Homemade · Authentic Hyderabadi Recipe · Order Now on WhatsApp 📞 8446564437 🌿</div>
+
+<!-- ══ SUCCESS OVERLAY ══ -->
+<div id="sov">
+  <div class="sbox">
+    <div class="confetti" id="confetti"></div>
+    <div class="check-wrap">
+      <div class="check-circle">
+        <svg class="cksvg" viewBox="0 0 50 50">
+          <path d="M12 26 L22 36 L38 16"/>
+        </svg>
+      </div>
+      <div class="rring"></div>
+    </div>
+    <div class="sdone">Order Placed! 🎉</div>
+    <div class="smsg">Order Accepted ✅</div>
+    <div class="ssub">Tap below to send your order on WhatsApp</div>
+    <button class="wa-open-btn" onclick="openWA()"><span style="font-size:1.3rem;">💬</span> Open WhatsApp</button>
+    <button class="sclose" onclick="closeSov()">Close</button>
+  </div>
+</div>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a class="nl" href="#home">
+    <div class="ni">🍲</div>
+    <div><div class="nt">Anjum's Khichada</div><div class="ns">Hyderabadi · Homemade</div></div>
+  </a>
+  <ul class="nlinks">
+    <li><a href="#product">Product</a></li>
+    <li><a href="#howto">How to Cook</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#order" class="ncta">Order Now</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()" id="ham">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mob-menu" id="mobMenu">
+  <span class="mob-close" onclick="toggleMenu()">✕</span>
+  <a href="#product" onclick="toggleMenu()">Product</a>
+  <a href="#howto" onclick="toggleMenu()">How to Cook</a>
+  <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <a href="#order" onclick="toggleMenu()" style="color:var(--orange);">🛒 Order Now</a>
+</div>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+  <div class="hblob" style="width:520px;height:520px;background:var(--orange);top:-150px;right:-150px;"></div>
+  <div class="hblob" style="width:300px;height:300px;background:var(--yellow);bottom:-80px;left:-80px;"></div>
+  <div class="spice-float" style="top:12%;left:5%;animation-delay:0s;">🌶️</div>
+  <div class="spice-float" style="top:20%;right:8%;animation-delay:1.4s;">🫘</div>
+  <div class="spice-float" style="bottom:25%;left:9%;animation-delay:2.8s;">✨</div>
+  <div class="spice-float" style="bottom:15%;right:6%;animation-delay:.8s;">🌿</div>
+  <div class="spice-float" style="top:55%;left:3%;animation-delay:2s;">⭐</div>
+  <div class="hi">
+    <div class="hbadge">🌿 100% Homemade &nbsp;·&nbsp; Authentic Recipe</div>
+    <h1>Anjum's<br><span>Hyderabadi</span><br>Khichada</h1>
+    <div class="htag">A cherished homemade recipe — rich, hearty &amp; made with love.<br>Contains 7 different nutritional food grains.</div>
+    <div class="chips">
+      <div class="chip">🫘 7 Food Grains</div>
+      <div class="chip">📦 400g Net Wt</div>
+      <div class="chip">💰 Only ₹130</div>
+      <div class="chip">🏠 Homemade</div>
+      <div class="chip">🌶️ Dal + Masala Pack</div>
+    </div>
+    <div class="hbtns">
+      <button class="btn bp" onclick="scrollToOrder()">🛒 Order Now</button>
+      <a href="#product" class="btn bo">See Product</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TICKER ══ -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <span>🍲 Hyderabadi Khichada</span><span>🏠 100% Homemade</span><span>🫘 7 Nutritional Grains</span>
+    <span>🌶️ Dal + Masala Pack</span><span>📦 400g · ₹130</span><span>✨ Authentic Recipe</span>
+    <span>📞 8446564437</span><span>🌿 Pure Homemade</span>
+    <span>🍲 Hyderabadi Khichada</span><span>🏠 100% Homemade</span><span>🫘 7 Nutritional Grains</span>
+    <span>🌶️ Dal + Masala Pack</span><span>📦 400g · ₹130</span><span>✨ Authentic Recipe</span>
+    <span>📞 8446564437</span><span>🌿 Pure Homemade</span>
+  </div>
+</div>
+
+<!-- ══ PRODUCT ══ -->
+<section id="product">
+  <div class="sc"><div class="slbl">Our Product</div><div class="stitle">What's In The Box?</div></div>
+  <div class="playout">
+    <div class="reveal" style="display:flex;align-items:center;justify-content:center;">
+      <div class="pcard">
+        <span class="pemoji">🍲</span>
+        <div class="pname">Hyderabadi Khichada</div>
+        <div class="pby">by Anjum Food Products</div>
+        <div class="pbubble"><div class="pa">₹130</div><div class="pl">Per Box</div></div>
+      </div>
+    </div>
+    <div class="reveal" style="transition-delay:.1s;">
+      <div class="pbar">
+        <div class="pbig">₹130</div>
+        <div class="pmeta">
+          <div>📦 Net Weight: 400 grams</div>
+          <div>🏠 100% Homemade</div>
+          <div>📬 2 Packs inside every box</div>
+        </div>
+      </div>
+      <div class="inside">
+        <h3>📦 What's Inside Each Box</h3>
+        <div class="pack">
+          <div class="pico">🫘</div>
+          <div class="ptxt"><strong>1 Pack of Dal Mix</strong><span>7 nutritional grains — wheat, rice, chana dal, masoor, moong, urad &amp; toor dal</span></div>
+        </div>
+        <div class="pack">
+          <div class="pico">🌶️</div>
+          <div class="ptxt"><strong>1 Small Masala Pack</strong><span>Hand-blended spices — bay leaf, cinnamon, cloves, cardamom, star anise &amp; mace</span></div>
+        </div>
+      </div>
+      <div class="pdesc">Anjum's Hyderabadi Khichada is a <strong>100% homemade</strong> product crafted with a treasured family recipe. Everything you need to bring authentic Hyderabadi flavour straight to your table.</div>
+      <button class="btn bp" onclick="scrollToOrder()">🛒 Order Now</button>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW TO COOK ══ -->
+<section id="howto">
+  <div class="sc"><div class="slbl">Easy to Make</div><div class="stitle">How to Cook</div></div>
+  <div class="steps">
+    <div class="step reveal">
+      <div class="step-num">1</div>
+      <span class="step-ico">💧</span>
+      <h3>Soak the Grains</h3>
+      <p>Wash and soak the dal mix in water for 2 hours before cooking.</p>
+    </div>
+    <div class="step reveal" style="transition-delay:.1s;">
+      <div class="step-num">2</div>
+      <span class="step-ico">🥩</span>
+      <h3>Add Meat or Veggies</h3>
+      <p>Add mutton, chicken or vegetables along with the masala pack.</p>
+    </div>
+    <div class="step reveal" style="transition-delay:.2s;">
+      <div class="step-num">3</div>
+      <span class="step-ico">♨️</span>
+      <h3>Pressure Cook</h3>
+      <p>Pressure cook everything together for 6–7 whistles until soft and rich.</p>
+    </div>
+    <div class="step reveal" style="transition-delay:.3s;">
+      <div class="step-num">4</div>
+      <span class="step-ico">🍽️</span>
+      <h3>Garnish &amp; Serve</h3>
+      <p>Top with fried onions, green chillies &amp; ginger julienne. Serve hot!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FEATURES ══ -->
+<section id="features">
+  <div class="sc"><div class="slbl">Our Promise</div><div class="stitle">Why Choose Anjum's?</div></div>
+  <div class="fgrid">
+    <div class="fcard reveal"><span class="fico">🏠</span><h3>100% Homemade</h3><p>Made with love using traditional Hyderabadi methods. No factory, no shortcuts.</p></div>
+    <div class="fcard reveal" style="transition-delay:.1s;"><span class="fico">🫘</span><h3>7 Nutritional Grains</h3><p>Wheat, rice &amp; 5 different dals — a wholesome, protein-rich family meal.</p></div>
+    <div class="fcard reveal" style="transition-delay:.2s;"><span class="fico">🌶️</span><h3>Authentic Masala</h3><p>Hand-blended whole spices — bay leaf, cinnamon, cloves, cardamom &amp; more.</p></div>
+    <div class="fcard reveal" style="transition-delay:.3s;"><span class="fico">💰</span><h3>Just ₹130</h3><p>Great value for a full family meal. Honest price, premium homemade quality.</p></div>
+    <div class="fcard reveal" style="transition-delay:.4s;"><span class="fico">⚡</span><h3>Ready to Make</h3><p>Everything is pre-measured and packed. Just soak, cook and enjoy!</p></div>
+    <div class="fcard reveal" style="transition-delay:.5s;"><span class="fico">🤍</span><h3>Made with Love</h3><p>A cherished family recipe passed down through generations, made fresh.</p></div>
+  </div>
+</section>
+
+<!-- ══ STATS ══ -->
+<div class="stats-strip reveal">
+  <div class="stats-grid">
+    <div><div class="stat-num" data-target="7">0</div><div class="stat-lbl">Food Grains</div></div>
+    <div><div class="stat-num" data-target="400">0</div><div class="stat-lbl">Grams Per Box</div></div>
+    <div><div class="stat-num" data-target="130">0</div><div class="stat-lbl">Price (₹)</div></div>
+    <div><div class="stat-num" data-target="2">0</div><div class="stat-lbl">Packs Inside</div></div>
+  </div>
+</div>
+
+<!-- ══ MARQUEE ══ -->
+<div class="spice-marquee">
+  <div class="mrow">
+    <div class="mcard"><span>🍲</span>Authentic Taste</div><div class="mcard"><span>🏠</span>Homemade</div>
+    <div class="mcard"><span>🫘</span>7 Grains</div><div class="mcard"><span>🌶️</span>Dal + Masala</div>
+    <div class="mcard"><span>💰</span>Only ₹130</div><div class="mcard"><span>📦</span>400g Net Wt</div>
+    <div class="mcard"><span>✨</span>Family Recipe</div><div class="mcard"><span>🌿</span>No Preservatives</div>
+    <div class="mcard"><span>🍲</span>Authentic Taste</div><div class="mcard"><span>🏠</span>Homemade</div>
+    <div class="mcard"><span>🫘</span>7 Grains</div><div class="mcard"><span>🌶️</span>Dal + Masala</div>
+    <div class="mcard"><span>💰</span>Only ₹130</div><div class="mcard"><span>📦</span>400g Net Wt</div>
+    <div class="mcard"><span>✨</span>Family Recipe</div><div class="mcard"><span>🌿</span>No Preservatives</div>
+  </div>
+  <div class="mrow rev">
+    <div class="mcard"><span>🔥</span>Rich &amp; Hearty</div><div class="mcard"><span>⭐</span>Premium Quality</div>
+    <div class="mcard"><span>🍃</span>Traditional Spices</div><div class="mcard"><span>🫶</span>Made with Love</div>
+    <div class="mcard"><span>📞</span>8446564437</div><div class="mcard"><span>📍</span>Kondhwa Pune</div>
+    <div class="mcard"><span>🥣</span>Easy to Cook</div><div class="mcard"><span>💚</span>Pure Vegetarian</div>
+    <div class="mcard"><span>🔥</span>Rich &amp; Hearty</div><div class="mcard"><span>⭐</span>Premium Quality</div>
+    <div class="mcard"><span>🍃</span>Traditional Spices</div><div class="mcard"><span>🫶</span>Made with Love</div>
+    <div class="mcard"><span>📞</span>8446564437</div><div class="mcard"><span>📍</span>Kondhwa Pune</div>
+    <div class="mcard"><span>🥣</span>Easy to Cook</div><div class="mcard"><span>💚</span>Pure Vegetarian</div>
+  </div>
+</div>
+
+<!-- ══ NUTRITION ══ -->
+<section id="nutrition">
+  <div class="sc"><div class="slbl">Nutrition</div><div class="stitle">Nutrition Facts</div><p style="font-style:italic;color:#999;font-size:.86rem;">Per 100g serving</p></div>
+  <div class="nutr reveal" id="nutr-card">
+    <div class="nhead">Hyderabadi Khichada — Nutrition Facts</div>
+    <div class="nbody">
+      <div class="nrow"><div class="nlbl">🫙 Fat</div><div class="ntrack"><div class="nfill" data-w="5"></div></div><div class="npct">2.55%</div></div>
+      <div class="nrow"><div class="nlbl">💪 Proteins</div><div class="ntrack"><div class="nfill" data-w="28"></div></div><div class="npct">18.65%</div></div>
+      <div class="nrow"><div class="nlbl">⚡ Carbohydrates</div><div class="ntrack"><div class="nfill" data-w="63"></div></div><div class="npct">63.29%</div></div>
+      <div class="nrow"><div class="nlbl">🔥 Energy Value</div><div class="ntrack"><div class="nfill" data-w="85"></div></div><div class="npct">417.62 kcal</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEWS ══ -->
+<section id="reviews">
+  <div class="sc"><div class="slbl">Customer Love</div><div class="stitle">What People Say ❤️</div></div>
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="stars">★★★★★</div>
+      <div class="review-text">"Bilkul ghar jaisa taste aata hai! Maine pehli baar kharida aur ab main regularly order karta hoon. Masala ekdum perfect hai."</div>
+      <div class="reviewer"><div class="reviewer-avatar">SA</div><div><div class="reviewer-name">Salman Ahmed</div><div class="reviewer-loc">Kondhwa, Pune</div></div></div>
+    </div>
+    <div class="review-card reveal" style="transition-delay:.1s;">
+      <div class="stars">★★★★★</div>
+      <div class="review-text">"Meri ammi ne bana ke khilaya tha aur ab mai khud order karta hoon. Bohot zyada tasty aur healthy bhi hai. 7 grains ka combination bohot achha hai!"</div>
+      <div class="reviewer"><div class="reviewer-avatar">RK</div><div><div class="reviewer-name">Razia Khan</div><div class="reviewer-loc">NIBM, Pune</div></div></div>
+    </div>
+    <div class="review-card reveal" style="transition-delay:.2s;">
+      <div class="stars">★★★★★</div>
+      <div class="review-text">"Ek number product hai. Price bhi zyada nahi, taste is like restaurant quality. Mere poore family ko pasand aaya. Highly recommended!"</div>
+      <div class="reviewer"><div class="reviewer-avatar">MI</div><div><div class="reviewer-name">Mohammed Irfan</div><div class="reviewer-loc">Wanowrie, Pune</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ══ -->
+<section id="faq">
+  <div class="sc"><div class="slbl">Questions?</div><div class="stitle">Frequently Asked Questions</div></div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">How many people does one box serve? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a"><p>One 400g box serves approximately 4–6 people as a main meal, depending on portion size.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">Is it vegetarian or non-vegetarian? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a"><p>The Khichada mix itself is 100% vegetarian. You can add mutton, chicken or cook it purely vegetarian — it tastes great both ways!</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">What is the shelf life of the product? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a"><p>The product stays fresh for 3–6 months when stored in a cool, dry place. Best used within the date marked on the packaging.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">Do you deliver at home? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a"><p>Yes! We deliver in Pune. Place your order via WhatsApp at 8446564437 and we will confirm your delivery details.</p></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFAQ(this)">Can I order in bulk for events? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a"><p>Absolutely! We accept bulk orders for weddings, parties and events. Contact us on WhatsApp for special bulk pricing and availability.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ORDER FORM ══ -->
+<section id="order">
+  <div class="sc">
+    <div class="slbl">Place Your Order</div>
+    <div class="stitle">Order Anjum's Khichada</div>
+    <div class="osub">Fill in your details — your order will go straight to our WhatsApp!</div>
+  </div>
+  <div class="ocard reveal">
+    <div class="frow">
+      <div class="fg"><label>👤 Your Full Name</label><input type="text" id="o-name" placeholder="e.g. Ahmed Khan"/></div>
+      <div class="fg"><label>📞 Phone Number</label><input type="tel" id="o-phone" placeholder="e.g. 9876543210"/></div>
+    </div>
+    <div class="fg"><label>📍 Delivery Address</label><textarea id="o-address" placeholder="House No., Street, Area, City..."></textarea></div>
+    <div class="qprow">
+      <div class="fg"><label>📦 How Many Boxes?</label><input type="number" id="o-qty" min="1" value="1" oninput="calcTotal()"/></div>
+      <div class="totbox"><div class="tl">Total Price</div><div class="ta" id="o-total">₹130</div></div>
+    </div>
+    <button class="wabtn" onclick="sendWA()"><span style="font-size:1.3rem;">💬</span>Send Order via WhatsApp</button>
+    <div class="onote">Your order details will open in WhatsApp — safe &amp; simple ✅</div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact">
+  <div class="sc"><div class="slbl">Find Us</div><div class="stitle">Contact Anjum's</div></div>
+  <div class="cgrid">
+    <div class="ccard reveal">
+      <h3>📍 Our Address</h3>
+      <div class="ci"><div class="cico">🏠</div><div class="ctxt"><div class="clbl">Location</div>Kondhwa, Meetha Nagar,<br>Ashoka Mews, Pune</div></div>
+      <div class="ci"><div class="cico">🌿</div><div class="ctxt"><div class="clbl">Business Type</div>Home-based · 100% Homemade product</div></div>
+      <div class="ci"><div class="cico">🕐</div><div class="ctxt"><div class="clbl">Order Hours</div>9:00 AM – 8:00 PM · All Days</div></div>
+    </div>
+    <div class="ccard reveal" style="transition-delay:.15s;">
+      <h3>📞 Get In Touch</h3>
+      <div class="ci"><div class="cico">📱</div><div class="ctxt"><div class="clbl">Phone / WhatsApp</div><a href="tel:8446564437" style="color:var(--orange);font-weight:700;text-decoration:none;font-size:1.1rem;">8446564437</a></div></div>
+      <div class="ci"><div class="cico">📦</div><div class="ctxt"><div class="clbl">Product</div>Hyderabadi Khichada · 400g · ₹130/box</div></div>
+      <div class="ci"><div class="cico">🚚</div><div class="ctxt"><div class="clbl">Delivery</div>Home delivery available in Pune</div></div>
+      <a class="walink" href="https://wa.me/918446564437?text=Hi%2C%20I%27d%20like%20to%20order%20Anjum%27s%20Hyderabadi%20Khichada!" target="_blank">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="flogo">Anjum's Hyderabadi Khichada</div>
+  <div class="ftag">A taste of Hyderabad — lovingly homemade 🌿</div>
+  <div class="flinks">
+    <a href="#home">Home</a>
+    <a href="#product">Product</a>
+    <a href="#howto">How to Cook</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="#order">Order Now</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div>Kondhwa, Meetha Nagar, Ashoka Mews, Pune &nbsp;·&nbsp; 📞 8446564437</div>
+  <div class="fcopy" style="margin-top:10px;">© 2025 Anjum Food Products. All rights reserved.</div>
+</footer>
+
+<!-- Back to Top -->
+<button id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})">⬆️</button>
+
+<script>
+// ── MOBILE MENU ──
+function toggleMenu(){
+  document.getElementById('mobMenu').classList.toggle('open');
+}
+
+// ── SCROLL TO ORDER ──
+function scrollToOrder(){
+  document.getElementById('order').scrollIntoView({behavior:'smooth'});
+}
+
+// ── PRICE CALC ──
+function calcTotal(){
+  const q=parseInt(document.getElementById('o-qty').value)||1;
+  document.getElementById('o-total').textContent='₹'+(q*130);
+}
+
+// ── SEND TO WHATSAPP ──
+let _waURL='';
+function sendWA(){
+  const name=document.getElementById('o-name').value.trim();
+  const phone=document.getElementById('o-phone').value.trim();
+  const address=document.getElementById('o-address').value.trim();
+  const qty=parseInt(document.getElementById('o-qty').value)||1;
+  const total=qty*130;
+  if(!name){alert('Please enter your name!');return;}
+  if(!phone){alert('Please enter your phone number!');return;}
+  if(!address){alert('Please enter your delivery address!');return;}
+  const msg=`🍲 *New Order — Anjum's Hyderabadi Khichada*\n\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n📍 *Address:* ${address}\n📦 *Boxes:* ${qty}\n💰 *Total:* ₹${total}\n\n_(400g · 1 Dal Pack + 1 Masala Pack · ₹130/box)_`;
+  _waURL='https://wa.me/918446564437?text='+encodeURIComponent(msg);
+  showSov();
+}
+function openWA(){
+  if(_waURL) window.location.href=_waURL;
+}
+function showSov(){
+  document.getElementById('sov').classList.add('show');
+  spawnConfetti();
+}
+function closeSov(){
+  document.getElementById('sov').classList.remove('show');
+}
+
+// ── CONFETTI ──
+function spawnConfetti(){
+  const c=document.getElementById('confetti');
+  c.innerHTML='';
+  const cols=['#FFD000','#FF6B00','#25D366','#FF9A3C','#E85000','#fff'];
+  for(let i=0;i<30;i++){
+    const d=document.createElement('div');d.className='cdot';
+    const s=5+Math.random()*10;
+    d.style.cssText=`width:${s}px;height:${s}px;background:${cols[Math.floor(Math.random()*cols.length)]};left:${5+Math.random()*90}%;top:${50+Math.random()*40}%;animation-duration:${.7+Math.random()*.8}s;animation-delay:${Math.random()*.4}s;`;
+    c.appendChild(d);
+  }
+}
+
+// ── FAQ TOGGLE ──
+function toggleFAQ(el){
+  const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// ── SCROLL REVEAL ──
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+// ── NUTRITION BARS ──
+const nutrObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.nfill').forEach(f=>{f.style.width=f.dataset.w+'%';});
+      nutrObs.unobserve(e.target);
+    }
+  });
+},{threshold:.3});
+document.querySelectorAll('#nutr-card').forEach(el=>nutrObs.observe(el));
+
+// ── COUNT-UP ──
+function countUp(el,target){
+  let s=0;const step=Math.max(1,Math.ceil(target/50));
+  const iv=setInterval(()=>{s=Math.min(s+step,target);el.textContent=s;if(s>=target)clearInterval(iv);},30);
+}
+const statsObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.stat-num').forEach(el=>countUp(el,parseInt(el.dataset.target)));
+      statsObs.unobserve(e.target);
+    }
+  });
+},{threshold:.4});
+document.querySelectorAll('.stats-strip').forEach(el=>statsObs.observe(el));
+
+// ── BACK TO TOP ──
+window.addEventListener('scroll',()=>{
+  document.getElementById('btt').classList.toggle('show',window.scrollY>400);
+});
+</script>
+</body>
+</html>
